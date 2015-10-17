@@ -1,25 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>BlogRails</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <link rel="stylesheet" type="text/css" href="/css/layout.css">
+	<title>BlogRails</title>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
+	<link rel="stylesheet" type="text/css" href="/css/layout.css">
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
-<header>
-	<nav>
-		<ul class="navmenu">
-			<li><a class="button" href="profile.html">Profile</li>
-			<li><a class="button" href="signup.html">Sign Up</li>
-			<li><a class="button" href="login.html">Login</li>
-			<li><a class="button" href="">Favorites</li>
-			<li><a class="button" href="">Best of Today</li>
-		</ul>
-	</nav>
+	<div id="wrapper">
+		<nav>
+			<ul class="navmenu">
+				<li><a class="button" href="signup.html">Sign Up</a></li>
+				<li><a class="button" href="login.html"/>Login</a></li>
+				<li><a class="button" href=""/>Posts You Like</a>
+					<!-- <ul class="subnav">
+						<li><a class="button" href=""/>This Week</li>
+						<li><a class="button" href=""/>Earlier</li>
+					</ul> -->
+				</li>
+				<li><a class="button" href="">Best of Today</a>
+					<!-- <ul class="subnav">
+						<li><a class="button" href=""/>Best of Your Friends</li>
+						<li><a class="button" href=""/>Top Posts</li>
+					</ul> -->
+				</li>
+			</ul>
+		</nav>
+	</div>
+		<%= yield %>
 
-<%= yield %>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
-</body>
-</html>
+		<script type="text/javascript">
+			$(document).ready(
+				function(){
+					$('.navmenu li').hover(
+						function(){
+							$('.subnav,' this).fadeIn();
+						},
+						function(){
+							$('.subnav,' this).fadeOut();
+						}
+						);
+				}
+				);
+		</script>
+
+	</body>
+	</html>

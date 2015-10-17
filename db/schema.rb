@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151017033751) do
+ActiveRecord::Schema.define(version: 20151017051524) do
 
   create_table "posts", force: :cascade do |t|
     t.text     "content"
@@ -26,6 +26,26 @@ ActiveRecord::Schema.define(version: 20151017033751) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "user_posts", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "user_posts", ["post_id"], name: "index_user_posts_on_post_id"
+  add_index "user_posts", ["user_id"], name: "index_user_posts_on_user_id"
+
+  create_table "user_profiles", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "profile_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "user_profiles", ["profile_id"], name: "index_user_profiles_on_profile_id"
+  add_index "user_profiles", ["user_id"], name: "index_user_profiles_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "fname"
