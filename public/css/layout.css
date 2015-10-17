@@ -1,0 +1,26 @@
+body {
+	width: 1020px;
+	background-color: white
+}
+
+nav {
+	width: 700px;
+	padding: 10px;
+	margin-left: 0;
+	margin-right: 120px;
+	background: white;
+	border-top: 7px solid black;
+	border-bottom: 7px solid black;
+}
+
+.navmenu {
+	list-style: none;
+	padding: 0;
+	width: 720px;
+	margin: 0
+}
+
+.navmenu li{
+	display: inline;
+	padding: 20px
+}
