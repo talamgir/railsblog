@@ -31,21 +31,31 @@ h1 {
 }
 
 nav {
-	width: 800px;
+	width: 900px;
+	margin: 0 auto;
 	padding: 10px;
-	margin: 0 auto
+	list-style: none;
+	float:left;
+
 }
 
-.navmenu {
+nav {
 	list-style: none;
 	padding: 0;
-	margin: 0
+	margin: 0;
+	text-align: center
 }
 
 .navmenu li{
-	width: 200px;
+	width: 150px;
 	position: relative;
-	float: left
+	float: left;
+	display: inline-block;
+	list-style: none
+}
+
+.navmenu li:hover {
+	background:#E6E6E6;
 }
 
 .navmenu li a{
@@ -55,76 +65,46 @@ nav {
 	padding: 5px 5px;
 	text-decoration: none;
 	border-bottom: 1px solid #222;
+	list-style: none
 
 }
 
-.navmenu li a:hover{
+/*.navmenu li a:hover{
 	color: #069;
-}
+}*/
 
 
-nav {
-	width: 1020px;
-	margin: 0 auto
-}
-
-.navmenu {
-	padding: 0;
-	margin: 0 auto;
-}
-
-.navmenu li {
-	width: 200px;
-	position: relative;
-	float: left;
-	list-style: none;
-}
-
-.navmenu li a:link, .navmenu li a:visited{
-	background: #333;
-	color: #fff;
-	display: block;
-	padding: 5px 5px;
-	text-decoration: none;
-	border-bottom: 1px solid #222;
-
-}
-
-.navmenu li a:hover{
-	color: #069;
-}
-
-/*.subnav {
+.subnav {
 	display: none;
 	position: absolute;
-	margin-left: 0px;
 	list-style: none;
 	padding:0px;
+	width: 150px;
+	background: #FFF;
 }
 
 .subnav li {
-	float: left;
-	width: 200px;	
+	width: 200px;
+	list-style: none	
 }
 
-.subnav li a:link, .subnav li a:visited {
+.subnav li a{
 	display: block;
-	height: 15px;
-	padding: 7px 8px;
 	color: #fff;
 	text-decoration: none;
-	border-bottom: 1px solid #222;
+	list-style: none;
 }
 
 .subnav li a:hover {
 	color: #333;
-}*/
+}
 
 .button {
 	text-decoration: none;
 	text-align: center;
 	display: inline;
 	border-radius: 5px;
+	list-style: none
 }
 
 .button:hover{
