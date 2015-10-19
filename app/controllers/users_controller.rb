@@ -6,13 +6,32 @@ class UsersController < ApplicationController
   end
 
   def login
-    @user = User.new
+  end
+
+  def loginverify
+    result = User.all.where(
+      email: params[:email],
+      password: params[:password]).first
+
+      if result
+        session[:user_id] = result.id
+        redirect_to root_url, :notice => 'Signed Up'
+
+      else
+        flash[:alert] = "Invalid email or password"
+        redirect_to '/login'
+    end
   end
 
   def logout
+    session[:user_id] = nil
+    session.clear
+    redirect_to root_url, :notice => "Logged out!"
   end
 
   def profile
+    @user = User.find_by(
+      id: session[:user_id])
   end
 
   def signup
@@ -51,4 +70,5 @@ class UsersController < ApplicationController
 
   def topposts
   end
+
 end
