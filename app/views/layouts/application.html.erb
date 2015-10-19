@@ -15,16 +15,16 @@
 				<li><a class="button" href="signup">Sign Up</a></li>
 				<li><a class="button" href="login"/>Login</a></li>
 				<li><a class="button" href="postsyoulike.html"/>Posts You Like</a>
-					<!-- <ul class="subnav">
-						<li><a class="button" href="thisweek.html"/>This Week</li>
-						<li><a class="button" href="earlier.html"/>Earlier</li>
-					</ul> -->
+					<ul class="subnav">
+						<li><a class="button" href="thisweek.html">This Week</a></li>
+						<li><a class="button" href="earlier.html">Earlier</a></li>
+					</ul>
 				</li>
 				<li><a class="button" href="bestoftoday.html">Best of Today</a>
-					<!-- <ul class="subnav">
-						<li><a class="button" href="bestofgroup.html"/>Best of Your Friends</li>
-						<li><a class="button" href="topposts.html"/>Top Posts</li>
-					</ul> -->
+					<ul class="subnav">
+						<li><a class="button" href="bestofgroup.html">Best of Your Friends</a></li>
+						<li><a class="button" href="topposts.html">Top Posts</a></li>
+					</ul>
 				</li>
 			</ul>
 		</nav>
@@ -34,19 +34,24 @@
 		</div>
 	</div>
 	<br />
-	<footer>
-		<% if current_user %>
-		Signed in as <%= current_user.name %> | <%= link_to "logout", '/logout' %>
-		<% else %>
-		<%= link_to 'login', '/login' %> | <%= link_to 'signup', '/signup' %>
-		<% end %>
-
-	</footer>
+	
 	<%= yield %>
 
+	<footer>
+
+	</footer>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 	<script type="text/javascript">
+	$('nav li ul').hide().removeClass('subnav');
+		$('nav li').hover(
+			function () {
+				$('ul', this).stop().slideDown(100);
+			},
+			function () {
+				$('ul', this).stop().slideUp(100);
+			}
+			);
 	// 	$(document).ready(
 	// 		function () {
 	// 			$('.navmenu > li').bind('mouseover', openSubnav);
@@ -64,8 +69,6 @@
 	$(document).ready (function(){
 		$('h1').slideDown('slow');
 	});
-
-	t
 	
 </script>
 

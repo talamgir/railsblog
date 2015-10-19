@@ -1,15 +1,36 @@
+<link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,700' rel='stylesheet' type='text/css'>
+
+<style type="text/css">
+      p {
+
+      font-family: 'Roboto Mono';
+      font-weight:bolder;
+      color: #333
+      }
+
+      div {
+      width: 450px;
+      margin-left: 225px;
+      margin-right: 225px;
+      color: #333
+      }
+
+</style>
+
+<div>
 <%= form_for @user do |f| %>
-      Enter First Name <%= f.text_field :fname %>
-      <br />
-      Enter Last Name <%= f.text_field :lname %>
-       <br />
-      Enter Email Address <%= f.text_field :email %>
-       <br />
-      Enter Password <%= f.password_field :password %>
-       <br />
-      Enter a Security Question <%= f.text_area :sec_ques %>
-       <br />
-      Enter an Answer to Your Question <%= f.text_area :sec_ans %>
-       <br />
-      <%= f.submit "Create" %>
-    <% end %>
+<p>Enter First Name</p> <%= f.text_field :fname %>
+<br />
+<p>Enter Last Name </p> <%= f.text_field :lname %>
+<br />
+<p>Enter Email Address</p> <%= f.text_field :email %>
+<br />
+<p>Enter Password</p> <%= f.password_field :password %>
+<br />
+<p>Enter a Security Question</p> <%= f.text_area :sec_ques %>
+<br />
+<p>Enter an Answer to Your Question</p> <%= f.text_area :sec_ans %>
+<br />
+<%= f.submit "Create" %>
+<% end %>
+</div>

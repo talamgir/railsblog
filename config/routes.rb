@@ -5,12 +5,6 @@ Rails.application.routes.draw do
 
   get 'sessions/destroy'
 
-  get 'sessions/create'
-
-  get 'sessions/new'
-
-  get 'sessions/create'
-
   get 'users/index'
 
   get 'users/edit'
@@ -35,34 +29,11 @@ Rails.application.routes.draw do
 
   get 'users/topposts'
 
-  get 'users/index'
-
-  get 'users/signup'
-
-  get 'users/profile'
-
-  get 'users/login'
-
-  get 'users/logout'
-
-  get 'users/edit'
-
-  get 'users/index'
-
-  get 'users/signup'
-
-  get 'users/profile'
-
-  get 'users/login'
-
-  get 'users/logout-success'
-
-  get 'users/edit'
-
 get "logout" => "sessions#destroy", :as => "logout"
 get "login" => "sessions#new", :as => "login"
-post "login" => "sessions#create", :as => "login"
+post "login" => "sessions#create"
 get "signup" => "users#signup", :as => "signup"
+
 root :to => "users#profile"
 resources :users
 resources :sessions

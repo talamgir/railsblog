@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   def login
     @user = User.new
   end
-    
+
   def logout
   end
 
@@ -20,16 +20,18 @@ class UsersController < ApplicationController
   end
 
   def create
-      @user = User.new(user_params)
-      if @user.save
-        redirect_to root_url, :notice => 'Signed Up'
-      else
-        render :index
-      end
+    @user = User.new(user_params)
+    if @user.save
+      flash[:notice] = "Welcome!"
+      redirect_to root_url, :notice => 'Signed Up'
+    else
+      flash[:notice] = "There was a problem creating your account"
+      render :index
+    end
   end
 
   def user_params
-      params.require(:user).permit(:fname, :lname, :email, :password, :sec_ques, :sec_ans)
+    params.require(:user).permit(:fname, :lname, :email, :password, :sec_ques, :sec_ans)
   end
 
   def postsyoulike
