@@ -5,21 +5,29 @@ html {
 }
 
 body {
+	width: 100%;
 	position: absolute;
 	top: 0
 	bottom: 0;
 	left: 0;
 	right: 0;
-	background-color:#333;
+	background-color:white;
 
 }
 
 #wrapper {
-	width: 1020px;
+	width: 900px;
 	text-align: center;
 	font-family: 'Roboto Mono';
 	font-weight:bolder;
-	margin: 0 auto
+	margin: 0 auto;
+	color: #333
+}
+
+h1 {
+	color: #333;
+	font-weight:bolder;
+	font-size: 36px
 }
 
 nav {
@@ -55,24 +63,24 @@ nav {
 }
 
 
-/*nav {
+nav {
 	width: 1020px;
 	margin: 0 auto
 }
 
 .navmenu {
 	padding: 0;
-	list-style: none;
 	margin: 0 auto;
 }
 
 .navmenu li {
 	width: 200px;
 	position: relative;
-	float: left
+	float: left;
+	list-style: none;
 }
 
-.navmenu li a{
+.navmenu li a:link, .navmenu li a:visited{
 	background: #333;
 	color: #fff;
 	display: block;
@@ -86,7 +94,7 @@ nav {
 	color: #069;
 }
 
-.subnav {
+/*.subnav {
 	display: none;
 	position: absolute;
 	margin-left: 0px;
@@ -99,7 +107,7 @@ nav {
 	width: 200px;	
 }
 
-.subnav li a{
+.subnav li a:link, .subnav li a:visited {
 	display: block;
 	height: 15px;
 	padding: 7px 8px;
@@ -121,5 +129,11 @@ nav {
 
 .button:hover{
 	margin: 2px 0 0 2px;
+t
+}
 
+footer {
+	text-align: center;
+	clear: both;
+	color: #333;
 }

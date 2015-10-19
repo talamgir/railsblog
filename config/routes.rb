@@ -1,4 +1,40 @@
 Rails.application.routes.draw do
+  get 'sessions/create'
+
+  get 'sessions/new'
+
+  get 'sessions/destroy'
+
+  get 'sessions/create'
+
+  get 'sessions/new'
+
+  get 'sessions/create'
+
+  get 'users/index'
+
+  get 'users/edit'
+
+  get 'users/login'
+
+  get 'users/logout'
+
+  get 'users/profile'
+
+  get 'users/signup'
+
+  get 'users/postsyoulike'
+
+  get 'users/thisweek'
+
+  get 'users/earlier'
+
+  get 'users/bestoftoday'
+
+  get 'users/bestofgroup'
+
+  get 'users/topposts'
+
   get 'users/index'
 
   get 'users/signup'
@@ -23,6 +59,13 @@ Rails.application.routes.draw do
 
   get 'users/edit'
 
+get "logout" => "sessions#destroy", :as => "logout"
+get "login" => "sessions#new", :as => "login"
+post "login" => "sessions#create", :as => "login"
+get "signup" => "users#signup", :as => "signup"
+root :to => "users#profile"
+resources :users
+resources :sessions
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

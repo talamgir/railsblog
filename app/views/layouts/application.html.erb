@@ -12,41 +12,62 @@
 	<div id="wrapper">
 		<nav>
 			<ul class="navmenu">
-				<li><a class="button" href="signup.html">Sign Up</a></li>
-				<li><a class="button" href="login.html"/>Login</a></li>
-				<li><a class="button" href=""/>Posts You Like</a>
+				<li><a class="button" href="signup">Sign Up</a></li>
+				<li><a class="button" href="login"/>Login</a></li>
+				<li><a class="button" href="postsyoulike.html"/>Posts You Like</a>
 					<!-- <ul class="subnav">
-						<li><a class="button" href=""/>This Week</li>
-						<li><a class="button" href=""/>Earlier</li>
+						<li><a class="button" href="thisweek.html"/>This Week</li>
+						<li><a class="button" href="earlier.html"/>Earlier</li>
 					</ul> -->
 				</li>
-				<li><a class="button" href="">Best of Today</a>
+				<li><a class="button" href="bestoftoday.html">Best of Today</a>
 					<!-- <ul class="subnav">
-						<li><a class="button" href=""/>Best of Your Friends</li>
-						<li><a class="button" href=""/>Top Posts</li>
+						<li><a class="button" href="bestofgroup.html"/>Best of Your Friends</li>
+						<li><a class="button" href="topposts.html"/>Top Posts</li>
 					</ul> -->
 				</li>
 			</ul>
 		</nav>
+		<br />
+		<div id="title">
+			<h1>TheBuzz</h1>
+		</div>
 	</div>
-		<%= yield %>
+	<br />
+	<footer>
+		<% if current_user %>
+		Signed in as <%= current_user.name %> | <%= link_to "logout", '/logout' %>
+		<% else %>
+		<%= link_to 'login', '/login' %> | <%= link_to 'signup', '/signup' %>
+		<% end %>
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	</footer>
+	<%= yield %>
 
-		<script type="text/javascript">
-			$(document).ready(
-				function(){
-					$('.navmenu li').hover(
-						function(){
-							$('.subnav,' this).fadeIn();
-						},
-						function(){
-							$('.subnav,' this).fadeOut();
-						}
-						);
-				}
-				);
-		</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
-	</body>
-	</html>
+	<script type="text/javascript">
+	// 	$(document).ready(
+	// 		function () {
+	// 			$('.navmenu > li').bind('mouseover', openSubnav);
+	// 			$('.navmenu > li').bind('mouseover', closeSubnav);
+	// 			function openSubnav(){
+	// 				$(this).find('subnav').css('visibility', 'visible');
+	// 			};
+	// 			function closeSubnav(){
+	// 				$(this).find('subnav').css('visibility', 'hidden');
+	// 			};
+	// 		});
+// </script>
+
+<script type="text/javascript">
+	$(document).ready (function(){
+		$('h1').slideDown('slow');
+	});
+
+	t
+	
+</script>
+
+</body>
+</html>
