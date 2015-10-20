@@ -14,6 +14,15 @@
 <div>
 	
 </div>
+      <br />
 <p>
 	<b>Hello <%= @user.fname %>!</b>
 </p>
+      <%= form_for_user_post do |f| %>
+      <p>
+            <%= label_tag :content %><br />
+            <%= text_area_tag :content, params[:contect] %>
+      </p>
+
+      <p class="button"><%= submit_tag "Post" %></p>
+      <% end %>
