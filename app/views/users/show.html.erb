@@ -1,0 +1,61 @@
+<style type="text/css">
+
+  div {
+    font-family: 'Roboto Mono';
+    font-weight:bolder
+  }
+
+  p {
+
+    text-align: center;
+    font-family: 'Roboto Mono';
+    font-weight:bolder
+  }
+
+  h1 {
+
+    font-family: 'Roboto Mono';
+    font-weight:bolder 
+
+  }
+
+  .button {
+    text-decoration: none;
+    text-align: center;
+    display: inline;
+    border-radius: 5px;
+    list-style: none
+  }
+
+  .button:hover{
+    margin: 2px 0 0 2px;
+  }
+</style>
+
+<br />
+
+<p>
+	<b>Hello <%= @user.fname %>!</b>
+</p>
+
+<p>Make a Post</p>
+
+<%= form_for [ @user, @post ] do |f| %>
+<p>
+  <%= f.label :content %><br/>
+  <%= f.text_area :content %>
+</p>
+<p>
+  <p class="button"><%= submit_tag "Post" %></p>
+  <% end %>
+
+  <br />
+
+  <a class="button" href="destroy">Logout</a>
+
+<p>ALL POSTS</p>
+<div>
+  <% @posts.each do |post| %>
+  <p><%= post.content %></p>
+<% end %>
+</div>

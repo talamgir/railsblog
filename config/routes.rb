@@ -25,12 +25,22 @@ Rails.application.routes.draw do
   get 'users/topposts'
 
 get "login" => "users#login", :as => "login"
-post "loginverify" => "users#loginverify" 
-get "logout" => "users#destroy", :as => "logout"
+post "loginverify" => "users#loginverify" , :as => "loginverify"
+get "destroy" => "users#destroy", :as => "logout"
 get "signup" => "users#signup", :as => "signup"
+get "forgotpassword" => "users#forgotpassword", :as => "forgotpassword"
+post "secemail" => "users#secemail", :as => "secemail"
+get "securitypage" => "users#securitypage", :as => "securitypage"
+post "security" => "users#security", :as => "security"
+get "confirmation" => "users#confirmation", :as => "confirmation"
+post "passwordrecall" => "users#passwordrecall", :as => "passwordrecall"
 
-root :to => "users#profile"
-resources :users
+
+root :to => "users#show"
+
+resources :users do
+  resources :posts
+end
 
 
   # The priority is based upon order of creation: first created -> highest priority.
