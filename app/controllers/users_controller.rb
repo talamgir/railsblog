@@ -126,7 +126,7 @@ end
 def passwordrecall
   puts params.inspect
   message = params["message"]
-  mandrill = Mandrill::API.new ENV["MANDRILL_APIKEY"]
+  mandrill = Mandrill::API.new ENV["cvCesEX6ZNBKScps_okTUg"]
   message = {
     :subject=> "Your Password",
     :to=> [{
